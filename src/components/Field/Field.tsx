@@ -3,7 +3,7 @@ import './Field.css';
 
 const Field = (props: any)  => {
   return (
-    <div className="Field">
+    <div className="Field" onClick={props.onClick}>
       {props.value}
     </div>
   );
