@@ -3,17 +3,16 @@ import Field from '../Field/Field';
 import './Board.css';
 
 const Board = (props: any) => {
+
+  const [values, setValues] = React.useState([
+    0, 0, 0,
+    0, 0, 0,
+    0, 0, 0
+  ]);
+
   return (
     <div className="Board">
-        <Field />
-        <Field />
-        <Field />
-        <Field />
-        <Field />
-        <Field />
-        <Field />
-        <Field />
-        <Field />
+        {values.map(item => <Field />)}
     </div>
   );
 }
