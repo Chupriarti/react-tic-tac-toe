@@ -12,6 +12,7 @@ const Board = (props: any) => {
   ]);
 
   const onChange = (idx: number, player: string) => {
+    if (values[idx] !== null) return;
     setValues(values => [...values.slice(0, idx), player,  ...values.slice(idx + 1)]);
     setPlayer(player => player === "X" ? "0" : "X")
   }
