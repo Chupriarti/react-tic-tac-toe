@@ -4,6 +4,7 @@ import './Board.css';
 
 type BoardProps = {
   player: string;
+  winner: string;
 	setPlayer: (player: any) => void;
   setWinner: (winner: any) => void;
 };
@@ -15,6 +16,7 @@ const Board: React.FC<BoardProps> = (props) => {
   React.useEffect(() => {
     if (checkIsWinner(values, props.player)){
       props.setWinner(props.player)
+      return
     }
     props.setPlayer(props.player === "X" ? "0" : "X")
   }, [values])
@@ -35,7 +37,7 @@ const Board: React.FC<BoardProps> = (props) => {
   }
 
   const onChange = (idx: number, player: string) => {
-    if (values[idx] !== null) return;
+    if (values[idx] !== null || props.winner) return;
     setValues(values => [...values.slice(0, idx), player,  ...values.slice(idx + 1)]);
   }
   

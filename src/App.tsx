@@ -9,9 +9,8 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Current Player: {player}</h1>
-      <Board player={player} setPlayer={setPlayer} setWinner={setWinner} />
-      {winner && <h1>Winner: {winner}</h1>}
+      {winner ? <h1>Winner: {winner}</h1> : <h1>Current Player: {player}</h1>}
+      <Board player={player} winner={winner} setPlayer={setPlayer} setWinner={setWinner} />
     </div>
   );
 }
