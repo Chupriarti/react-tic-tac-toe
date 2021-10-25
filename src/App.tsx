@@ -3,10 +3,13 @@ import './App.css';
 import Board from './components/Board/Board';
 
 function App() {
+
+  const [player, setPlayer] = React.useState("X");
+
   return (
     <div className="App">
-      <h1>React App</h1>
-      <Board />
+      <h1>Current Player: {player}</h1>
+      <Board player={player} setPlayer={setPlayer} />
     </div>
   );
 }
