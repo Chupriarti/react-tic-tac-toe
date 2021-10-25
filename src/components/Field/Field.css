@@ -1,0 +1,9 @@
+.Field {
+  width: 30%;
+  height: 30%;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 60pt;
+}
