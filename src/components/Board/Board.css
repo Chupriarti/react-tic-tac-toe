@@ -8,3 +8,9 @@
   border: 1px solid black;
   padding-top: 0.5%;
 }
+
+.ResetButton {
+  font-size: 20pt;
+  margin-top: 10px;
+  width: 310px;
+}

@@ -40,11 +40,20 @@ const Board: React.FC<BoardProps> = (props) => {
     if (values[idx] !== null || props.winner) return;
     setValues(values => [...values.slice(0, idx), player,  ...values.slice(idx + 1)]);
   }
+
+  const onReset = () => {
+    setValues(new Array(9).fill(null))
+    props.setPlayer("X")
+    props.setWinner("")
+  }
   
   return (
-    <div className="Board">
+    <>
+      <div className="Board">
         {values.map((item, idx) => <Field key={idx} value={item} onClick={() => onChange(idx, props.player)} />)}
-    </div>
+      </div>
+      <button onClick={onReset} className="ResetButton">Reset Game</button>
+    </>
   );
 }
 
